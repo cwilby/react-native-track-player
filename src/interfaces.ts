@@ -158,7 +158,7 @@ export enum State {
   Connecting = TrackPlayer.STATE_CONNECTING,
 }
 
-interface TrackMetadataBase {
+export interface TrackMetadata {
   title?: string
   album?: string
   artist?: string
@@ -170,11 +170,11 @@ interface TrackMetadataBase {
   rating?: number | boolean
 }
 
-export interface NowPlayingMetadata extends TrackMetadataBase {
+export interface NowPlayingMetadata extends TrackMetadata {
   elapsedTime?: number
 }
 
-export interface Track extends TrackMetadataBase {
+export interface Track extends TrackMetadata {
   id: string
   url: string | ResourceObject
   type?: TrackType
